@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">ConstraintLayout2.0</string>
     <string name="title"><b>Design</b>Deals</string>
+    <string name="subtitle_1">Choosing The Right\nGraphic Tools For You</string>
+    <string name="subtitle_2">In really Affordable Prices</string>
+    <string name="button">Register</string>
+    <string name="edit_text_hint">Search</string>
 </resources>
