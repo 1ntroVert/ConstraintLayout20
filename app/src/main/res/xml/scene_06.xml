@@ -31,6 +31,14 @@
 
     <ConstraintSet android:id="@+id/film_01_preview">
         <Constraint
+            android:id="@id/solid_header"
+            android:layout_width="0dp"
+            android:layout_height="?attr/actionBarSize"
+            android:visibility="invisible"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"/>
+        <Constraint
             android:id="@id/poster1"
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -157,13 +165,17 @@
                 motion:attributeName="textColor"
                 motion:customColorValue="@android:color/white"/>
         </Constraint>
-        <Constraint
-            android:id="@id/title"
-            android:visibility="visible">
-        </Constraint>
     </ConstraintSet>
 
     <ConstraintSet android:id="@+id/film_01_details">
+        <Constraint
+            android:id="@id/solid_header"
+            android:layout_width="0dp"
+            android:layout_height="?attr/actionBarSize"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:visibility="visible"/>
         <Constraint
             android:id="@id/poster1"
             motion:layout_constraintTop_toTopOf="parent"
@@ -226,6 +238,14 @@
 
     <ConstraintSet android:id="@+id/film_02_details">
         <Constraint
+            android:id="@id/solid_header"
+            android:layout_width="0dp"
+            android:layout_height="?attr/actionBarSize"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:visibility="visible"/>
+        <Constraint
             android:id="@id/poster2"
             motion:layout_constraintTop_toTopOf="parent"
             motion:layout_constraintBottom_toBottomOf="parent"
@@ -234,6 +254,36 @@
             motion:layout_constraintVertical_bias="0.25"
             motion:layout_constraintWidth_percent="0.5"
             motion:layout_constraintHeight_percent="0.52">
+            <CustomAttribute
+                motion:attributeName="saturation"
+                motion:customFloatValue="1"/>
+        </Constraint>
+        <Constraint
+            android:id="@id/blue_footer"
+            android:visibility="invisible">
+        </Constraint>
+        <Constraint
+            android:id="@id/white_footer"
+            android:visibility="visible"
+            motion:layout_constraintTop_toBottomOf="@+id/header"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent">
+        </Constraint>
+        <Constraint
+            android:id="@id/category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            motion:layout_constraintTop_toBottomOf="@id/poster2"
+            motion:layout_constraintBottom_toTopOf="@id/divider"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintVertical_chainStyle="packed"
+            motion:layout_constraintVertical_bias="0.0">
+            <CustomAttribute
+                motion:attributeName="textColor"
+                motion:customColorValue="#ecb138"/>
         </Constraint>
         <Constraint
             android:id="@id/divider">
@@ -242,7 +292,13 @@
                 motion:customColorValue="#bebcb8"/>
         </Constraint>
         <Constraint
-            android:id="@id/title">
+            android:id="@id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@id/divider"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent">
             <CustomAttribute
                 motion:attributeName="textColor"
                 motion:customColorValue="#000721"/>

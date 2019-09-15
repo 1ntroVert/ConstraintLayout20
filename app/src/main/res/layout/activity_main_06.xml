@@ -41,29 +41,39 @@
     <View
         android:id="@+id/header"
         android:layout_width="0dp"
-        android:layout_height="56dp"
-        android:background="@drawable/gradient_background"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@drawable/gradient_drawable"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:text="INTERSTELLAR"/>
 
-    <ImageButton
+    <View
+        android:id="@+id/solid_header"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#000823"/>
+
+    <ImageView
         android:id="@+id/logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="12dp"
-        android:background="@drawable/ic_search"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/logo"
+        app:layout_constraintTop_toTopOf="@+id/header"
+        app:layout_constraintBottom_toBottomOf="@+id/header"
         app:layout_constraintStart_toStartOf="parent"/>
 
     <ImageButton
         android:id="@+id/search"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
         android:background="@drawable/ic_search"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/header"
+        app:layout_constraintBottom_toBottomOf="@+id/header"
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <View
