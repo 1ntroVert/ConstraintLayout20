@@ -4,20 +4,22 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.constraintlayout.motion.widget.MotionLayout
 import kotlinx.android.synthetic.main.activity_main_06.*
+import android.text.method.ScrollingMovementMethod
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main_flow)
+        setContentView(R.layout.activity_main_06)
 
-//        category.setOnClickListener {
-//            if (motion_layout.currentState == R.id.film_01_details || motion_layout.currentState == R.id.film_02_details) return@setOnClickListener
-//
-//            val endState = if (motion_layout.currentState == R.id.film_01_preview) R.id.film_01_details else R.id.film_02_details
-//            motion_layout.setTransition(motion_layout.currentState, endState)
-//            motion_layout.transitionToEnd()
-//        }
+        description.movementMethod = ScrollingMovementMethod()
+        category.setOnClickListener {
+            if (motion_layout.currentState == R.id.film_01_details || motion_layout.currentState == R.id.film_02_details) return@setOnClickListener
+
+            val endState = if (motion_layout.currentState == R.id.film_01_preview) R.id.film_01_details else R.id.film_02_details
+            motion_layout.setTransition(motion_layout.currentState, endState)
+            motion_layout.transitionToEnd()
+        }
     }
 
     override fun onBackPressed() {
@@ -36,7 +38,8 @@ class MainActivity : AppCompatActivity() {
                 override fun onTransitionStarted(p0: MotionLayout?, p1: Int, p2: Int) {
                 }
 
-                override fun onTransitionChange(p0: MotionLayout?, p1: Int, p2: Int, p3: Float) {
+                override fun onTransitionChange(p0: MotionLayout?, startId: Int, endId: Int, progress: Float) {
+
                 }
 
                 override fun onTransitionCompleted(motionLayout: MotionLayout?, currentId: Int) {

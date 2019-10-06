@@ -88,6 +88,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/medium_spacing"
+        app:fontFamily="@font/zona_black"
         android:textSize="16sp"
         android:textColor="@android:color/white"
         android:includeFontPadding="false"
@@ -108,7 +109,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/medium_spacing"
-        android:textSize="42sp"
+        app:fontFamily="@font/alternate_gothic_atf_bold"
+        android:textSize="48sp"
         android:includeFontPadding="false"
         android:textAllCaps="true"/>
 
@@ -116,9 +118,14 @@
         android:id="@+id/description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingStart="@dimen/large_spacing"
+        android:paddingEnd="@dimen/large_spacing"
         android:layout_margin="@dimen/medium_spacing"
+        android:scrollbars="none"
+        android:textColor="#000000"
         android:text="So perhaps, you've generated some fancy text, and you're content that you can now copy and paste your fancy text in the comments section of funny cat videos, but perhaps you're wondering how it's even possible to change the font of your text? Is it some sort of hack? Are you copying and pasting an actual font?"
-        android:textSize="12sp"
+        app:fontFamily="@font/arquitecta_w00_regular"
+        android:textSize="24sp"
         android:includeFontPadding="false"/>
 
 </androidx.constraintlayout.motion.widget.MotionLayout>
