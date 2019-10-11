@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.constraintlayout.motion.widget.MotionLayout
 import kotlinx.android.synthetic.main.activity_main_06.*
+import kotlinx.android.synthetic.main.activity_main_06.title as film_title
 import android.text.method.ScrollingMovementMethod
 
 class MainActivity : AppCompatActivity() {
@@ -13,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main_06)
 
         description.movementMethod = ScrollingMovementMethod()
-        category.setOnClickListener {
+        film_title.setOnClickListener {
             if (motion_layout.currentState == R.id.film_01_details || motion_layout.currentState == R.id.film_02_details) return@setOnClickListener
 
             val endState = if (motion_layout.currentState == R.id.film_01_preview) R.id.film_01_details else R.id.film_02_details

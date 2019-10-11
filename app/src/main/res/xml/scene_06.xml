@@ -15,14 +15,10 @@
                 motion:motionTarget="@id/category"
                 android:alpha="0"
                 motion:framePosition="50"/>
-        </KeyFrameSet>
-        <KeyFrameSet>
             <KeyAttribute
                 motion:motionTarget="@id/divider"
                 android:alpha="0"
                 motion:framePosition="50"/>
-        </KeyFrameSet>
-        <KeyFrameSet>
             <KeyAttribute
                 motion:motionTarget="@id/title"
                 android:alpha="0"
@@ -33,13 +29,41 @@
     <Transition
         motion:constraintSetStart="@id/film_01_preview"
         motion:constraintSetEnd="@id/film_01_details"
-        motion:duration="300">
+        motion:duration="500">
+        <KeyFrameSet>
+            <KeyAttribute
+                motion:motionTarget="@id/solid_header"
+                android:alpha="1"
+                motion:framePosition="1"/>
+            <KeyAttribute
+                motion:motionTarget="@id/white_footer"
+                android:alpha="1"
+                motion:framePosition="1"/>
+            <KeyAttribute
+                motion:motionTarget="@id/blue_footer"
+                android:alpha="0"
+                motion:framePosition="1"/>
+        </KeyFrameSet>
     </Transition>
 
     <Transition
         motion:constraintSetStart="@id/film_02_preview"
         motion:constraintSetEnd="@id/film_02_details"
-        motion:duration="300">
+        motion:duration="500">
+        <KeyFrameSet>
+            <KeyAttribute
+                motion:motionTarget="@id/solid_header"
+                android:alpha="1"
+                motion:framePosition="1"/>
+            <KeyAttribute
+                motion:motionTarget="@id/white_footer"
+                android:alpha="1"
+                motion:framePosition="1"/>
+            <KeyAttribute
+                motion:motionTarget="@id/blue_footer"
+                android:alpha="0"
+                motion:framePosition="1"/>
+        </KeyFrameSet>
     </Transition>
 
     <ConstraintSet android:id="@+id/film_01_preview">
@@ -47,7 +71,7 @@
             android:id="@id/solid_header"
             android:layout_width="0dp"
             android:layout_height="?attr/actionBarSize"
-            android:visibility="invisible"
+            android:alpha="0"
             motion:layout_constraintTop_toTopOf="parent"
             motion:layout_constraintStart_toStartOf="parent"
             motion:layout_constraintEnd_toEndOf="parent"/>
@@ -82,7 +106,11 @@
         </Constraint>
         <Constraint
             android:id="@id/white_footer"
-            android:visibility="invisible">
+            android:alpha="0"
+            motion:layout_constraintTop_toBottomOf="@+id/header"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent">
         </Constraint>
         <Constraint
             android:id="@id/category"
@@ -127,7 +155,7 @@
             android:id="@id/description"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:visibility="gone"
+            android:alpha="0"
             motion:layout_constraintStart_toStartOf="parent"
             motion:layout_constraintEnd_toEndOf="parent"
             motion:layout_constraintTop_toBottomOf="@+id/title"
@@ -187,8 +215,7 @@
             android:layout_height="?attr/actionBarSize"
             motion:layout_constraintTop_toTopOf="parent"
             motion:layout_constraintStart_toStartOf="parent"
-            motion:layout_constraintEnd_toEndOf="parent"
-            android:visibility="visible"/>
+            motion:layout_constraintEnd_toEndOf="parent"/>
         <Constraint
             android:id="@id/poster1"
             motion:layout_constraintTop_toTopOf="parent"
@@ -204,11 +231,14 @@
         </Constraint>
         <Constraint
             android:id="@id/blue_footer"
-            android:visibility="invisible">
+            android:visibility="invisible"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent">
         </Constraint>
         <Constraint
             android:id="@id/white_footer"
-            android:visibility="visible"
+            android:alpha="1"
             motion:layout_constraintTop_toBottomOf="@+id/header"
             motion:layout_constraintBottom_toBottomOf="parent"
             motion:layout_constraintStart_toStartOf="parent"
@@ -251,7 +281,7 @@
             android:id="@id/description"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:visibility="visible"
+            android:alpha="1"
             android:layout_marginTop="32dp"
             motion:layout_constraintStart_toStartOf="parent"
             motion:layout_constraintEnd_toEndOf="parent"
@@ -267,8 +297,7 @@
             android:layout_height="?attr/actionBarSize"
             motion:layout_constraintTop_toTopOf="parent"
             motion:layout_constraintStart_toStartOf="parent"
-            motion:layout_constraintEnd_toEndOf="parent"
-            android:visibility="visible"/>
+            motion:layout_constraintEnd_toEndOf="parent"/>
         <Constraint
             android:id="@id/poster2"
             motion:layout_constraintTop_toTopOf="parent"
@@ -284,11 +313,14 @@
         </Constraint>
         <Constraint
             android:id="@id/blue_footer"
-            android:visibility="invisible">
+            android:visibility="invisible"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent">
         </Constraint>
         <Constraint
             android:id="@id/white_footer"
-            android:visibility="visible"
+            android:alpha="1"
             motion:layout_constraintTop_toBottomOf="@+id/header"
             motion:layout_constraintBottom_toBottomOf="parent"
             motion:layout_constraintStart_toStartOf="parent"
@@ -332,7 +364,7 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginTop="32dp"
-            android:visibility="visible"
+            android:alpha="1"
             motion:layout_constraintStart_toStartOf="parent"
             motion:layout_constraintEnd_toEndOf="parent"
             motion:layout_constraintTop_toBottomOf="@+id/title"
